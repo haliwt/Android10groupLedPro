@@ -82,7 +82,7 @@ void mainMX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(LEDA1_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LEDA7_Pin LEDA8_Pin LEDBPWM_Pin LEDB4_Pin
                            LEDB5_Pin LEDB6_Pin LEDB7_Pin */

@@ -48,6 +48,7 @@ void LedOnOff(uint8_t ledNum,uint8_t onOff)
 				mainled.led_by_b = 1;
 				mainTurnOff_TheSecondLedB();
 				mainTurnOff_TheFirstLedA();
+		        HAL_GPIO_WritePin(LEDACUT_GPIO_Port,LEDACUT_Pin,GPIO_PIN_RESET);//WT.EDIT 2021.08.12
 				HAL_Delay(20);
                 //turn on LEDA6
                 //HAL_GPIO_WritePin(LEDA6_GPIO_Port, LEDA6_Pin, GPIO_PIN_SET);
@@ -62,22 +63,25 @@ void LedOnOff(uint8_t ledNum,uint8_t onOff)
 				mainled.led_by_b = 0;
 				mainTurnOff_TheSecondLedB();
 				mainTurnOff_TheFirstLedA();
-				HAL_Delay(20);
+		       
+		        HAL_Delay(20);
                 //turn on LEDA7
                 HAL_GPIO_WritePin(LEDA8_GPIO_Port, LEDA8_Pin, GPIO_PIN_SET);
+		         HAL_GPIO_WritePin(LEDACUT_GPIO_Port,LEDACUT_Pin,GPIO_PIN_SET);//WT.EDIT 2021.08.12
 				setLevel_PWMA(mainled.pwmDutyCycle_ch22);
                 
            break;
 
-		   case 2://PB1-[3]-----oled menu "UV365" {1}
+		   case 2://PB0-[3]-----oled menu "Violet" {1}
 				mainled.led_by_a = 1;
 				mainled.led_by_b = 0;
 				mainTurnOff_TheSecondLedB();
 				mainTurnOff_TheFirstLedA();
+				HAL_GPIO_WritePin(LEDACUT_GPIO_Port,LEDACUT_Pin,GPIO_PIN_RESET);//WT.EDIT 2021.08.12
 				HAL_Delay(20);
-                //turn on LEDA4
-                HAL_GPIO_WritePin(LEDA8_GPIO_Port, LEDA8_Pin, GPIO_PIN_SET);
-			    //2 .EN
+               
+                HAL_GPIO_WritePin(LEDA7_GPIO_Port, LEDA7_Pin, GPIO_PIN_SET);
+		        //2 .EN
 				setLevel_PWMA(mainled.pwmDutyCycle_ch22);
 			    //  HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_2) ;
            break;
@@ -92,6 +96,7 @@ void LedOnOff(uint8_t ledNum,uint8_t onOff)
 				HAL_Delay(20);
                 //turn on LEDA4
                 HAL_GPIO_WritePin(LEDA1_GPIO_Port, LEDA1_Pin, GPIO_PIN_SET);
+		        HAL_GPIO_WritePin(LEDACUT_GPIO_Port,LEDACUT_Pin,GPIO_PIN_SET);//WT.EDIT 2021.08.12
 			    //2 .EN
 				setLevel_PWMA(mainled.pwmDutyCycle_ch22);
 			    //  HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_2) ;
@@ -102,6 +107,7 @@ void LedOnOff(uint8_t ledNum,uint8_t onOff)
 				mainled.led_by_a = 0;
 				mainTurnOff_TheFirstLedA();
 				mainTurnOff_TheSecondLedB();
+		        HAL_GPIO_WritePin(LEDACUT_GPIO_Port,LEDACUT_Pin,GPIO_PIN_RESET);//WT.EDIT 2021.08.12
 				HAL_Delay(20);
 
 				//turn on LEDB1
@@ -115,6 +121,7 @@ void LedOnOff(uint8_t ledNum,uint8_t onOff)
 				mainled.led_by_b = 0;
 				mainTurnOff_TheSecondLedB();
 				mainTurnOff_TheFirstLedA();
+			    HAL_GPIO_WritePin(LEDACUT_GPIO_Port,LEDACUT_Pin,GPIO_PIN_RESET);//WT.EDIT 2021.08.12
 				HAL_Delay(20);
                 //turn on LEDA7
                 HAL_GPIO_WritePin(LEDA4_GPIO_Port, LEDA4_Pin, GPIO_PIN_SET);
@@ -129,6 +136,7 @@ void LedOnOff(uint8_t ledNum,uint8_t onOff)
 				mainled.led_by_a = 0;
 				mainTurnOff_TheFirstLedA();
 				mainTurnOff_TheSecondLedB();
+			    HAL_GPIO_WritePin(LEDACUT_GPIO_Port,LEDACUT_Pin,GPIO_PIN_RESET);//WT.EDIT 2021.08.12
 				HAL_Delay(20);
 
 				//turn on LEDB1
@@ -141,6 +149,7 @@ void LedOnOff(uint8_t ledNum,uint8_t onOff)
 				mainled.led_by_a = 0;
 				mainTurnOff_TheFirstLedA();
 				mainTurnOff_TheSecondLedB();
+			    HAL_GPIO_WritePin(LEDACUT_GPIO_Port,LEDACUT_Pin,GPIO_PIN_RESET);//WT.EDIT 2021.08.12
 				HAL_Delay(20);
 
 				//turn on LEDB1
@@ -156,6 +165,7 @@ void LedOnOff(uint8_t ledNum,uint8_t onOff)
 				// HAL_UART_Transmit(&huart1,&temp,1,2);
 				mainTurnOff_TheFirstLedA();
 			    mainTurnOff_TheSecondLedB();
+			    HAL_GPIO_WritePin(LEDACUT_GPIO_Port,LEDACUT_Pin,GPIO_PIN_RESET);//WT.EDIT 2021.08.12
 				HAL_Delay(20);
 				//turn on LEDB7 =1
                 HAL_GPIO_WritePin(LEDB8_GPIO_Port, LEDB8_Pin, GPIO_PIN_SET);
@@ -169,39 +179,13 @@ void LedOnOff(uint8_t ledNum,uint8_t onOff)
 				mainled.led_by_b = 0;
 				mainTurnOff_TheSecondLedB();
 				mainTurnOff_TheFirstLedA();
+			    HAL_GPIO_WritePin(LEDACUT_GPIO_Port,LEDACUT_Pin,GPIO_PIN_RESET);//WT.EDIT 2021.08.12
 				HAL_Delay(20);
                 //turn on LEDA7
                 HAL_GPIO_WritePin(LEDA2_GPIO_Port, LEDA2_Pin, GPIO_PIN_SET);
 				setLevel_PWMA(mainled.pwmDutyCycle_ch22);
 				
                 break;
-
-			
-
-	   
-	   	
-		
-
-           
-
-      
-
-           
-
-          
-
-          
-
-          
-
-          
-
-
-          
-
-
-          
-           
 	   }
 	  
    }
